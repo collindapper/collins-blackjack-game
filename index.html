@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Fontawesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="./style.css">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+  <!-- Google Fonts -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Spectral+SC:wght@300&display=swap');
+  </style> 
+
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+  
+  <title>Blackjack Game</title>
+</head>
+<body>
+<!-- Game Title -->
+<div class="gameTitle pt-4">
+  <h1 class="display-1 text-center"><strong>BLACKJACK</strong></h1>
+  <h6 class="text-center"><secondary>by <a class="portfolioLink  text-black" href="https://collins-personal-portfolio.netlify.app/">Collin Dapper</a></secondary></h6>
+</div>
+
+<!-- New Game Screen -->
+<div class="container" id="newGameScreen">
+  <div class="d-flex justify-content-center row">
+    <div class="col-6 position-absolute bg-secondary border border-dark border-3 mt-4 p-3">
+      <h1 class="text-center"><span id="newGameMessage"></span></h1>
+      <div class="d-flex justify-content-center">
+      <!-- <button id="newGame" class="newGame newGameButton btn btn-dark mx-2" onclick="newGameButton()">New Game</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Betting / Bank -->
+<div class="container ">
+  <div class="d-flex border-bottom border-dark justify-content-center row my-3">
+    <div class="d-flex col-4 justify-content-center">
+      <h3 class="bank"><strong>Bank: <span id="bankTotal"></span></strong></h3>
+    </div>
+    <div class="d-flex col-4 justify-content-center">
+      <h3 class="bet mx-2"><strong>Bet: <span id="bet"></span></strong></h3>
+      <h3><strong><input class="border border-dark bg-dark text-center text-white mb-2" type="number" id="betTotal" name="bet" min="10" max="100" required></strong></h3>
+    </div>
+  </div>
+</div>
+
+<!-- Game Screen -->
+<div class="justify-content-center" id="gameScreen">
+  <div class="d-flex justify-content-center container py-2">
+    <div class="d-flex justify-content-center row">
+<div class="d-flex row justify-content-center">
+    
+<!-- Dealer Score -->
+    <h3 class="text-center playerName"><strong>Dealer Score: <span id="dealerScore">0</span></strong></h3>
+    
+    <div class="col-10 border border-dark border-2 dealerBox">
+      <div class="row justify-content-center dealerHand">
+   
+        <div class="col-2 cards pt-2"><span id="dealerCardOne"></span></div>
+        <div class="col-2 cards pt-2"><span id="dealerCardTwo"></span></div>
+        <div class="col-2 cards pt-2"><span id="dealerCardThree"></span></div>
+        <div class="col-2 cards pt-2"><span id="dealerCardFour"></span></div>
+        <div class="col-2 cards pt-2"><span id="dealerCardFive"></span></div>
+      </div>
+    </div>
+  
+
+<!-- Your Score -->
+  <div class="d-flex row justify-content-center mt-4">
+    <h3 class="text-center playerName"><strong>Your Score: <span id="userScore">0</span></strong></h3>
+    <div class="col-10 border border-dark border-2 playerBox">
+      <div class="row justify-content-center playerHand">
+        <div class="col-2 cards pt-2"><span id="userCardOne"></span></div>
+        <div class="col-2 cards pt-2"><span id="userCardTwo"></span></div>
+        <div class="col-2 cards pt-2"><span id="userCardThree"></span></div>
+        <div class="col-2 cards pt-2"><span id="userCardFour"></span></div>
+        <div class="col-2 cards pt-2"><span id="userCardFive"></span></div>
+      </div>
+    </div>
+  </div>
+
+<!-- Hit/Stand Buttons -->
+  <div class="buttons">
+    <div class="row justify-content-center align-items-center">
+      <h3 class="text-center pt-2"><strong><span id="message" class="message m-2"></span></strong></h3>
+    </div>
+
+    <div class="row justify-content-center align-items-center">
+    <div class="d-flex col-4 justify-content-center py-2">
+      
+      <button id="hit" class="hit hitButton btn btn-dark mx-2" onclick="hitButton()">Hit</button>
+      <button id="stand" class="stand standButton btn btn-dark mx-2" onclick="standButton()">Stand</button>
+      <button id="deal" class="deal dealButton btn btn-dark mx-2" onclick="dealButton()">Deal</button>
+      <button id="newGame" class="newGame newGameButton btn btn-dark mx-2" onclick="newGameButton()">New Game</button>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+<script src="./application.js"></script>
+</body>
+<!-- CODE FOR ADVANCED VERSION -->
+<!-- <h3 class="text-center align-items-center mx-2 px-2"><strong>Bank:<br>$<span id="bank"></span></strong></h3>
+      
+      <form>
+        <h3 class="text-center align-items-center mx-2"><strong>Bet:</strong></h3>
+        <select name="dropdown" id="betOptions" class="text-white bg-dark border border-dark">
+          <option value="" id="10Bet"></option>
+          <option value="10" id="10Bet">10</option>
+          <option value="20" id="20Bet">20</option>
+          <option value="30" id="30Bet">30</option>
+          <option value="40" id="40Bet">40</option>
+          <option value="50" id="50Bet">50</option>
+          <option value="60" id="60Bet">60</option>
+          <option value="70" id="70Bet">70</option>
+          <option value="80" id="80Bet">80</option>
+          <option value="90" id="90Bet">90</option>
+          <option value="100" id="100Bet">100</option>
+        </select>
+      </form> -->
+</html>

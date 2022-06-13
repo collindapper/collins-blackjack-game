@@ -1,0 +1,36 @@
+body {
+  background-image: url(./blackjack\ table.jpg);
+  background-size: cover;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Spectral SC';
+}
+
+.portfolioLink {
+  text-decoration: none;
+}
+
+.dealerBox,
+.playerBox {
+  height: 230px;
+}
+
+.form-control {
+  width: auto;
+}
+
+input {
+  width: 75px;
+  height: 75%;
+}
+
+img {
+  height: 210px;
+  width: auto;
+}
